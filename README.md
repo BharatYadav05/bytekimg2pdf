@@ -7,7 +7,7 @@ No uploads. No server. 100% local processing.
 
 ## 🚀 Live Demo
 
-👉 https://bharatyadav05.github.io/bytekimg2pdf/
+👉 https://bytekimg2pdf.netlify.app/
 
 ---
 

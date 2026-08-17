@@ -1,0 +1,401 @@
+/* Fuel ByTek with Milk - Support Modal & Responsive Payment Styles */
+
+.btn-support-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--text);
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-support-trigger:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+/* Post-download secondary prompt */
+.post-download-support {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: cardIn 0.35s ease both;
+}
+
+.support-prompt-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.support-prompt-text strong {
+  color: var(--text);
+  font-family: var(--font-primary);
+}
+
+/* Support Modal Content */
+.support-modal-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.support-badge-icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.support-modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.support-modal-sub {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* Amount Presets */
+.amount-presets-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.amount-presets-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.preset-btn {
+  padding: 10px 6px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.preset-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.preset-btn.active {
+  background: rgba(255, 157, 0, 0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
+/* Custom Input Wrap */
+.custom-amount-wrap {
+  display: none;
+  margin-bottom: 20px;
+  animation: cardIn 0.25s ease both;
+}
+
+.custom-amount-wrap.visible {
+  display: block;
+}
+
+.custom-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency-prefix {
+  position: absolute;
+  left: 14px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  pointer-events: none;
+}
+
+.custom-amount-input {
+  width: 100%;
+  padding: 12px 14px 12px 34px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.custom-amount-input:focus {
+  border-color: var(--accent);
+}
+
+.custom-amount-input.invalid {
+  border-color: var(--danger);
+}
+
+.validation-msg {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--danger);
+  margin-top: 6px;
+  display: none;
+}
+
+.validation-msg.visible {
+  display: block;
+}
+
+/* Mobile vs Desktop Payment Visibility Rules (<1024px vs >=1024px) */
+@media (max-width: 1023px) {
+  .upi-mobile-section {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .btn-upi-pay {
+    width: 100%;
+    padding: 16px 20px;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+
+  .btn-upi-pay:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--accent-glow);
+  }
+
+  .toggle-qr-link {
+    display: block;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 12px auto 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+
+  .toggle-qr-link:hover {
+    color: var(--accent);
+  }
+
+  .qr-section.mobile-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* On Desktop, hide mobile deep-link CTA & toggle link */
+  .upi-mobile-section {
+    display: none !important;
+  }
+
+  .qr-section {
+    display: block !important;
+  }
+}
+
+/* QR & Desktop Card Container */
+.qr-section {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.qr-title-label {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.qr-box-wrap {
+  display: inline-block;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 12px;
+  max-width: 100%;
+}
+
+#qrCanvasContainer {
+  width: 180px;
+  height: 180px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+#qrCanvasContainer canvas {
+  width: 100% !important;
+  max-width: 180px !important;
+  height: auto !important;
+  display: block;
+}
+
+.qr-hint {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* UPI ID Fallback Copy */
+.upi-id-copy-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  max-width: 100%;
+}
+
+.upi-id-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.btn-copy-upi {
+  padding: 4px 10px;
+  background: var(--border);
+  border: none;
+  border-radius: 6px;
+  color: var(--text);
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-copy-upi:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.copy-feedback {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--success);
+  margin-top: 6px;
+  height: 16px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.copy-feedback.visible {
+  opacity: 1;
+}
+
+.support-footer-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 14px;
+}
+
+/* Mobile Modal Viewport Overflow Prevention (320px - 480px) */
+@media (max-width: 480px) {
+  .amount-presets-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .preset-btn {
+    padding: 10px 4px;
+    font-size: 13px;
+  }
+
+  .support-modal-title {
+    font-size: 20px;
+  }
+
+  .qr-section {
+    padding: 16px 10px;
+  }
+
+  #qrCanvasContainer {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 360px) {
+  .amount-presets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .upi-id-copy-box {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
